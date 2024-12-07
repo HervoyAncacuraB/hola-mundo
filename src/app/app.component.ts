@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Hola Mundo desde Fire Base Hosting';
+  title = 'Hola Mundo from cualquier cosa applications';
 }
