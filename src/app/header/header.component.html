@@ -1,0 +1,44 @@
+<header class="header text-center">
+  <h1 class="blog-name pt-lg-4 mb-0"><a class="no-text-decoration" href="index.html">Hervoy's Blog</a></h1>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" >
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navigation" class="collapse navbar-collapse flex-column" >
+      <div class="profile-section pt-3 pt-lg-0">
+        <img class="profile-image mb-3 rounded-circle mx-auto" ngSrc="../../assets/images/logo/keyboard_logo.png" width="150" height="175" alt="image">
+
+        <div class="bio mb-3">Hola mi nombre es Hervoy Ancacura. Desarrollador Backend Java, también me estoy aventurando FrontEnd con Angular. Si quieres saber mas acerca de mi, puedes visitar mi portafolio.<br><a href="about.html">Find out more about me</a></div>
+        <!--//bio-->
+        <ul class="social-list list-inline py-3 mx-auto">
+          <li class="list-inline-item"><a href="{{twitterProfileUrl}}"><fa-icon [icon]="faXTwitter"></fa-icon></a></li>
+          <li class="list-inline-item"><a href="{{linkedinProfileUrl}}"><fa-icon [icon]="faLinkedinIn"></fa-icon></a></li>
+          <li class="list-inline-item"><a href="{{gitHubProfileUrl}}"><fa-icon [icon]="faGithubAlt"></fa-icon></a></li>
+          <li class="list-inline-item"><a href="{{StackOverFlowProfileUrl}}"><fa-icon [icon]="faStackOverflow"></fa-icon></a></li>
+          <li class="list-inline-item"><a href="{{codePenProfileUrl}}"><fa-icon [icon]="faCodepen"></fa-icon></a></li>
+        </ul><!--//social-list-->
+        <hr>
+      </div><!--//profile-section-->
+
+      <ul class="navbar-nav flex-column text-start">
+        <li class="nav-item">
+          <a class="nav-link active" href="index.html"><i class="fas fa-home fa-fw me-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw me-2"></i>Blog Post</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
+        </li>
+      </ul>
+
+      <div class="my-2 my-md-3">
+        <a class="btn btn-primary" href="https://themes.3rdwavemedia.com/" target="_blank">Get in Touch</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
