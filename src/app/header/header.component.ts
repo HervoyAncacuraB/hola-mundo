@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { faXTwitter, faLinkedinIn, faGithubAlt, faStackOverflow, faCodepen } from '@fortawesome/free-brands-svg-icons';
 import {NgOptimizedImage} from "@angular/common";
 

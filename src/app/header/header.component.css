@@ -1,9 +1,18 @@
 /*! DevBlog - Bootstrap 5 Blog Template For Developers
-                        * Version: Bootstrap 5 v3.1
-* Author: Xiaoying Riley
-* Copyright: 3rd Wave Media Ltd.
-              * Website: http://themes.3rdwavemedia.com/
-* Twitter: @3rdwave_themes*/
+  * Version: Bootstrap 5 v3.1
+  * Author: Xiaoying Riley
+  * Copyright: 3rd Wave Media Ltd.
+  * Website: http://themes.3rdwavemedia.com/
+  * Twitter: @3rdwave_themes*/
+
+@import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
+
+
+.allison-regular {
+  font-family: "Allison", serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -103,13 +112,26 @@ a.text-link:hover {
   background: #223142 !important
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+
+
 .header {
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
   width: 280px;
-  background: #5FCB71;
+  overflow: auto;
+  background-image: linear-gradient(to right, #1A88B1, #4AD5FB, #1A88B1);
   color: #fff
 }
 
@@ -186,8 +208,22 @@ a.text-link:hover {
   color: rgba(0, 0, 0, 0.6)
 }
 
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.88;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .profile-section .profile-image {
-  max-width: 160px
+  max-width: 160px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-in-out;
 }
 
 .profile-section .bio {
@@ -466,7 +502,9 @@ a.text-link:hover {
   .header {
     position: static;
     width: inherit;
-    height: auto
+    height: auto;
+    max-height: 400px;
+    overflow-y: auto;
   }
 
   .header .blog-name {

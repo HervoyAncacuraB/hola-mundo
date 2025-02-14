@@ -1,5 +1,10 @@
 # Tareas Pendientes
 
+## Default Task 
+*  [] Cambiar paleta de colores
+* 
+
+
 ## Style
 *  [ ] Cambiar paleta de colores 
 *  [ ] agregar scroll lateral Header
