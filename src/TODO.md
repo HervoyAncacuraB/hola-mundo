@@ -2,7 +2,7 @@
 
 ## Default Task 
 *  [] Cambiar paleta de colores
-* 
+*  [] agregar libreria documentacion (JSDoc vs Compodoc )
 
 
 ## Style

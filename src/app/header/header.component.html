@@ -12,13 +12,13 @@
         <img class="profile-image mb-3 rounded-circle mx-auto" ngSrc="../../assets/images/Profile_250x250.png
 " width="160" height="160" alt="Profile">
 
-        <div class="bio mb-3">Hola, mi nombre es Hervoy Ancacura. Desarrollador Backend Java, también me estoy aventurando FrontEnd con Angular. Solo te puedo adelantar eso, si quieres saber mas de mi y de lo que hago, visita la seccion "About me".<br><a href="about.html">Find out more about me</a></div>
+        <div class="bio mb-3"><span> </span>
+          <br><a href="about.html">Find out more about me</a></div>
         <ul class="social-list list-inline py-3 mx-auto">
-          <li class="list-inline-item"><a href="{{twitterProfileUrl}}"><fa-icon [icon]="faXTwitter"></fa-icon></a></li>
-          <li class="list-inline-item"><a href="{{linkedinProfileUrl}}"><fa-icon [icon]="faLinkedinIn"></fa-icon></a></li>
-          <li class="list-inline-item"><a href="{{gitHubProfileUrl}}"><fa-icon [icon]="faGithubAlt"></fa-icon></a></li>
-          <li class="list-inline-item"><a href="{{StackOverFlowProfileUrl}}"><fa-icon [icon]="faStackOverflow"></fa-icon></a></li>
-          <li class="list-inline-item"><a href="{{codePenProfileUrl}}"><fa-icon [icon]="faCodepen"></fa-icon></a></li>
+          <li class="list-inline-item" #linkedinIcon><a href="{{linkedinProfileUrl}}"><fa-icon [icon]="faLinkedinIn"></fa-icon></a></li>
+          <li class="list-inline-item" #githubIcon><a href="{{gitHubProfileUrl}}"><fa-icon [icon]="faGithubAlt"></fa-icon></a></li>
+          <li class="list-inline-item" #stackoverflowIcon><a href="{{StackOverFlowProfileUrl}}"><fa-icon [icon]="faStackOverflow"></fa-icon></a></li>
+          <li class="list-inline-item" #codePenIcon><a href="{{codePenProfileUrl}}"><fa-icon [icon]="faCodepen"></fa-icon></a></li>
         </ul><!--//social-list-->
         <hr>
       </div><!--//profile-section-->
@@ -41,5 +41,3 @@
     </div>
   </nav>
 </header>
-
-○
