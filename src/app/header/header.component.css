@@ -7,7 +7,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
 
-
 .allison-regular {
   font-family: "Allison", serif;
   font-weight: 400;
@@ -129,7 +128,7 @@ a.text-link:hover {
   left: 0;
   top: 0;
   height: 100vh;
-  width: 280px;
+  width: 330px;
   overflow: auto;
   background-image: linear-gradient(to right, #1A88B1, #4AD5FB, #1A88B1);
   color: #fff
