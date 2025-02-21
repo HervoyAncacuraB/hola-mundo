@@ -3,11 +3,12 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faCodepen, faGithubAlt, faLinkedinIn, faStackOverflow} from '@fortawesome/free-brands-svg-icons';
 import {NgOptimizedImage} from "@angular/common";
 import gsap from 'gsap';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [FontAwesomeModule, NgOptimizedImage],
+  imports: [FontAwesomeModule, NgOptimizedImage, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

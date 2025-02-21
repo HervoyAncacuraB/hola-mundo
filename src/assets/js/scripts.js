@@ -1,3 +1,4 @@
+
 gsap.registerPlugin(TextPlugin);
 
 document.addEventListener("DOMContentLoaded", function () {
