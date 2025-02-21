@@ -7,6 +7,7 @@ import {BlogPostComponent} from "./blog-post/blog-post.component";
 import {CtaComponent} from "./cta/cta.component";
 import {FooterComponent} from "./footer/footer.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {PracticeComponent} from "./practice/practice.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -17,5 +18,7 @@ export const routes: Routes = [
   { path: 'blogPost', component: BlogPostComponent },
   { path: 'cta', component: CtaComponent},
   { path: 'footer', component: FooterComponent},
+  { path: 'practice', component: PracticeComponent},
   { path: '**', component: NotFoundComponent },
 ];
+
