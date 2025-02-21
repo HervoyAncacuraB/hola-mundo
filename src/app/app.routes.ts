@@ -9,12 +9,14 @@ import {FooterComponent} from "./footer/footer.component";
 import {PracticeComponent} from "./practice/practice.component";
 
 export const routes: Routes = [
-  { path: 'home', component:HomeComponent  },
-  { path: 'about', component:AboutMeComponent  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutMeComponent },
   { path: 'blogList', component: BlogListComponent },
   { path: 'blogNav', component: BlogNavComponent },
   { path: 'blogPost', component: BlogPostComponent },
-  { path: 'cta', component: CtaComponent},
-  { path: 'footer', component: FooterComponent},
-  { path: 'practice', component: PracticeComponent}
+  { path: 'cta', component: CtaComponent },
+  { path: 'footer', component: FooterComponent },
+  { path: 'practice', component: PracticeComponent },
+  { path: '**', redirectTo: 'home'} // Esta línea es opcional, pero ayuda a redirigir rutas inexistentes a home
 ];
