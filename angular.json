@@ -23,27 +23,23 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              }, "src/assets"
+                "input": "src/assets",
+                "output": "/assets"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/theme-1.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "1mb",
                   "maximumError": "1MB"
                 },
                 {

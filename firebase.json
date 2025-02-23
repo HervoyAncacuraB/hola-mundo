@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/hola-mundo/browser",
+    "public": "dist/hola-mundo",
     "ignore": [
       "firebase.json",
       "**/.*",
