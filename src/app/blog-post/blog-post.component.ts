@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import {DomSanitizer, SafeHtml} from "@angular/platform-browser";
+import {BlogNavComponent} from "../blog-nav/blog-nav.component";
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [],
+  imports: [
+    BlogNavComponent
+  ],
   templateUrl: './blog-post.component.html',
   styleUrl: './blog-post.component.css'
 })

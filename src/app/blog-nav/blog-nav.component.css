@@ -17,11 +17,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 a {
-  color: #5FCB71
+  color: #4AD5FB
 }
 
 a:hover {
-  color: #36a749
+  color: #32AFD6
 }
 
 a.no-text-decoration {
@@ -69,7 +69,7 @@ a.text-link:hover {
 
 .btn-primary:hover, .btn-primary:active {
   color: #fff;
-  background: #4cc560
+  background: #4AD5FB
 }
 
 .form-control {
@@ -109,7 +109,7 @@ a.text-link:hover {
   top: 0;
   height: 100vh;
   width: 280px;
-  background: #5FCB71;
+  background: #4AD5FB;
   color: #fff
 }
 
@@ -248,7 +248,7 @@ a.text-link:hover {
 }
 
 .promo-section .promo-section-inner {
-  background: #5FCB71
+  background: #4AD5FB
 }
 
 .footer {
@@ -317,8 +317,9 @@ a.text-link:hover {
   display: none
 }
 
+/*va*/
 .blog-nav .nav-link {
-  background: #5FCB71;
+  background: #1A88B1;
   color: #fff;
   font-size: 1rem;
   padding: 1rem;
@@ -327,11 +328,11 @@ a.text-link:hover {
 }
 
 .blog-nav .nav-link:hover {
-  background: #3dba52
+  background: #32AFD6
 }
 
 .blog-nav .nav-link-prev {
-  border-right: 1px solid #309441
+  border-right: 1px solid #1A88B1
 }
 
 .blog-nav .arrow-prev {

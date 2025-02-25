@@ -5,7 +5,6 @@
 *  [] margin left of about me componente more adjusted to the left or header section
 
 
-
 ## Style
 *  [] pick up color celeste de foto "pickup_color_1" 
 *  [x] Cambiar paleta de colores 
@@ -30,3 +29,8 @@
 ##  Documentar
 *  [] agregar libreria documentacion (JSDoc vs Compodoc )
 *  [] buscar alguna liberia que documente mis librerias en base a mi package.json
+
+## Research
+*  [] Que hay acerca de preprocesadores como SCSS o PostCSS
+*  [] Como usars PurgeCSS on WebStorm
+*  [] Que hay de hacer un diseño en figma

@@ -17,7 +17,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 a {
-  color: #5FCB71
+  color: #4AD5FB
 }
 
 a:hover {
@@ -109,7 +109,7 @@ a.text-link:hover {
   top: 0;
   height: 100vh;
   width: 280px;
-  background: #5FCB71;
+  background: #4AD5FB;
   color: #fff
 }
 
@@ -248,7 +248,7 @@ a.text-link:hover {
 }
 
 .promo-section .promo-section-inner {
-  background: #5FCB71
+  background: #4AD5FB
 }
 
 .footer {
@@ -318,7 +318,7 @@ a.text-link:hover {
 }
 
 .blog-nav .nav-link {
-  background: #5FCB71;
+  background: #4AD5FB;
   color: #fff;
   font-size: 1rem;
   padding: 1rem;
