@@ -1,11 +1,15 @@
 # Tareas Pendientes
 
 ## Default Task 
+*  [] add resume section
+*  [] add portfolio section 
+*  [] add contact me section (Form)
+*  [] connect form with backend(BFF)
 *  [] hacer que efecto(texto) solo se muestre una vez
-*  [] margin left of about me componente more adjusted to the left or header section
-
 
 ## Style
+*  [x] create a favicon on canva
+*  [x] margin left of about me componente more adjusted to the left or header section
 *  [] pick up color celeste de foto "pickup_color_1" 
 *  [x] Cambiar paleta de colores 
 *  [x] agregar scroll lateral Header

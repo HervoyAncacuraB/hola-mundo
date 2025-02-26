@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faCodepen, faGithubAlt, faLinkedinIn, faStackOverflow} from '@fortawesome/free-brands-svg-icons';
+import {faBookmark,faUser,faHome, faFileLines} from '@fortawesome/free-solid-svg-icons';
 import {NgOptimizedImage} from "@angular/common";
 import gsap from 'gsap';
 import {RouterLink} from "@angular/router";
@@ -25,15 +26,21 @@ export class HeaderComponent implements AfterViewInit{
     const stackoverflowIcon =this.stackoverflowIcon.nativeElement;
     const codePenIcon =this.codePenIcon.nativeElement;
 
-    linkedin.addEventListener('mouseenter', () => {gsap.to(linkedin, {scale: 1.2, duration: 0.3 });});
-    linkedin.addEventListener('mouseleave', () => {gsap.to(linkedin, { scale: 1, duration: 0.3 });});
-    githubIcon.addEventListener('mouseenter', () => {gsap.to(githubIcon, {scale: 1.2, duration: 0.3 });});
-    githubIcon.addEventListener('mouseleave', () => {gsap.to(githubIcon, { scale: 1, duration: 0.3 });});
-    stackoverflowIcon.addEventListener('mouseenter', () => {gsap.to(stackoverflowIcon, {scale: 1.2, duration: 0.3 });});
-    stackoverflowIcon.addEventListener('mouseleave', () => {gsap.to(stackoverflowIcon, { scale: 1, duration: 0.3 });});
-    codePenIcon.addEventListener('mouseenter', () => {gsap.to(codePenIcon, {scale: 1.2, duration: 0.3 });});
-    codePenIcon.addEventListener('mouseleave', () => {gsap.to(codePenIcon, { scale: 1, duration: 0.3 });});
+    linkedin.addEventListener('mouseenter', () => {gsap.to(linkedin, {scale: 1.2, duration: 0.2 });});
+    linkedin.addEventListener('mouseleave', () => {gsap.to(linkedin, { scale: 1, duration: 0.2 });});
+    githubIcon.addEventListener('mouseenter', () => {gsap.to(githubIcon, {scale: 1.2, duration: 0.2 });});
+    githubIcon.addEventListener('mouseleave', () => {gsap.to(githubIcon, { scale: 1, duration: 0.2 });});
+    stackoverflowIcon.addEventListener('mouseenter', () => {gsap.to(stackoverflowIcon, {scale: 1.2, duration: 0.2 });});
+    stackoverflowIcon.addEventListener('mouseleave', () => {gsap.to(stackoverflowIcon, { scale: 1, duration: 0.2 });});
+    codePenIcon.addEventListener('mouseenter', () => {gsap.to(codePenIcon, {scale: 1.2, duration: 0.2 });});
+    codePenIcon.addEventListener('mouseleave', () => {gsap.to(codePenIcon, { scale: 1, duration: 0.2 });});
   }
+
+
+  faFileLinesIcon = faFileLines;
+  faBookmarkIcon = faBookmark;
+  faUserIcon = faUser;
+  faHomeIcon = faHome;
 
   faLinkedinIn = faLinkedinIn;
   faGithubAlt = faGithubAlt;

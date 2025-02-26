@@ -24,13 +24,13 @@
 
       <ul class="navbar-nav flex-column text-start">
         <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/home']"><i class="fas fa-home fa-fw me-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="['/blogPost']"><fa-icon [icon]="faFileLinesIcon" class="fas fa-fw me-2"></fa-icon>Resume</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/blogPost']"><i class="fas fa-bookmark fa-fw me-2"></i>Blog Post</a>
+          <a class="nav-link" [routerLink]="['/about']"><fa-icon [icon]="faUserIcon" class="fas fa-fw me-2"></fa-icon>About Me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/about']"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
+          <a class="nav-link active" [routerLink]="['/home']"><fa-icon [icon]="faBookmarkIcon" class="fas fa-fw me-2"></fa-icon>Blog <span class="sr-only">(current)</span></a>
         </li>
       </ul>
 
