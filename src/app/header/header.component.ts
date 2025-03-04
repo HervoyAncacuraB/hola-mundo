@@ -36,7 +36,6 @@ export class HeaderComponent implements AfterViewInit{
     codePenIcon.addEventListener('mouseleave', () => {gsap.to(codePenIcon, { scale: 1, duration: 0.2 });});
   }
 
-
   faFileLinesIcon = faFileLines;
   faBookmarkIcon = faBookmark;
   faUserIcon = faUser;

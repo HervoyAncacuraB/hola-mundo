@@ -1,13 +1,30 @@
 # Tareas Pendientes
 
-## Default Task 
+## Default Task
+*  [] add a mock object, json object(Resume)
+*  [] add un efecto chingon to the page (see codepene bookmar)
 *  [] add resume section
-*  [] add portfolio section 
+*  [] add portfolio section
 *  [] add contact me section (Form)
 *  [] connect form with backend(BFF)
-*  [] hacer que efecto(texto) solo se muestre una vez
+
+## TL Task
+*  [] apply lazy load and other optimized strategies
+*  [] define de branching model
+*  [] define the nomenclature of commit message
+*  [] define○ stack of libraries that should be use
+
+## TL && Architect Task 
+*  [] create documentation space for save all related to this topic
+*  [] definir diagrama de Componentes (ver libreria de angular que genera)
+*  [] definir diagrama de casos de uso
+*  [] definir diagrama de modelo de Dominio
+*  [] definir diagrama de componentes
+*  [] definir diagrama de flujo de datos
+
 
 ## Style
+*  [] hacer que efecto(texto) solo se muestre una vez
 *  [x] create a favicon on canva
 *  [x] margin left of about me componente more adjusted to the left or header section
 *  [] pick up color celeste de foto "pickup_color_1" 

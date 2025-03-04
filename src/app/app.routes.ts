@@ -7,6 +7,7 @@ import {BlogPostComponent} from "./blog-post/blog-post.component";
 import {CtaComponent} from "./cta/cta.component";
 import {FooterComponent} from "./footer/footer.component";
 import {PracticeComponent} from "./practice/practice.component";
+import {ResumeComponent} from "./resume/resume.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path: 'cta', component: CtaComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'practice', component: PracticeComponent },
+  { path: 'resume', component: ResumeComponent },
   { path: '**', redirectTo: 'home'} // Esta línea es opcional, pero ayuda a redirigir rutas inexistentes a home
 ];
