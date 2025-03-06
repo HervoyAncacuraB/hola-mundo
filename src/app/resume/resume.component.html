@@ -1,123 +1,72 @@
 <section class="cta-section theme-bg-light py-4">
   <div class="container text-center single-col-max-width">
-    <button mat-button class="btn btn-primary" (click)="generatePDF()" [disabled]="isGenerating">
-      <mat-spinner *ngIf="isGenerating" diameter="20"></mat-spinner>
-      <span *ngIf="!isGenerating"></span>
-      {{ isGenerating ? 'Generando...' : 'Descargar PDF' }}
-    </button>
-  </div><!--//container-->
+    <button (click)="generatePDF()" #downloadPDFBtn type="button" class="btn btn-primary"><fa-icon [icon]="faDownload" ></fa-icon> Descargar CV en PDF</button>
+  </div>
 </section>
-<div class="container resume-container px-3 px-lg-5" id="resume-content">
+<div *ngIf="resumeData" class="container resume-container px-3 px-lg-5" id="resume-content">
   <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
 
     <div class="resume-header">
       <div class="row align-items-center">
         <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-          <h2 class="resume-name mb-0 text-uppercase">Hervoy Ancacura</h2>
-          <div class="resume-tagline mb-3 mb-md-0">Senior Software Engineer</div>
-        </div><!--//resume-title-->
+          <h2 class="resume-name mb-0 text-uppercase">{{resumeData.name}}</h2>
+          <div class="resume-tagline mb-3 mb-md-0">{{resumeData.position}}</div>
+        </div>
         <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
           <ul class="list-unstyled mb-0">
-            <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg me-2 "></i><a class="resume-link" href="tel:#">0123 4567 890</a></li>
-            <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg me-2"></i><a class="resume-link" href="mailto:#">simon&#64;yourwebsite.com</a></li>
-            <li class="mb-2"><i class="fas fa-globe fa-fw fa-lg me-2"></i><a class="resume-link" href="#">www.yourwebsite.com</a></li>
-            <li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg me-2"></i>New York</li>
+            <li class="mb-2"><fa-icon [icon]="faPhoneSquare" ></fa-icon>
+              <a class="resume-link">
+                {{resumeData.phone}}
+              </a></li>
+            <li class="mb-2"><fa-icon [icon]="faEnvelopeSquare" class="fa-fw fa-lg me-2"></fa-icon>
+              <a class="resume-link">
+                {{resumeData.email}}
+              </a>
+            </li>
+            <li class="mb-2"><fa-icon [icon]="faGlobe" class="fa-fw fa-lg me-2"></fa-icon>
+              <a class="resume-link">
+                {{resumeData.website}}
+              </a>
+            </li>
+            <li class="mb-0"><fa-icon [icon]="faMapMarkerAlt" class="fa-fw fa-lg me-2"></fa-icon>
+              {{resumeData.location}}
+            </li>
           </ul>
-        </div><!--//resume-contact-->
-      </div><!--//row-->
+        </div>
+      </div>
 
-    </div><!--//resume-header-->
+    </div>
     <hr>
     <div class="resume-intro py-3">
       <div class="row align-items-center">
         <div class="col-12 col-md-3 col-xl-2 mx-4 text-center">
           <img class="resume-profile-image mb-3 mb-md-0 me-md-5 ms-md-0 rounded-circle mx-auto" src="assets/images/Profile_160x160.png" alt="profile">
         </div>
-
         <div class="col text-start">
-          <p class="mb-0">Summarise your career here. <a class="theme-link" href="https://themes.3rdwavemedia.com/resources/sketch-template/resume-sketch-sketch-resume-template-for-software-developers/" target="_blank">You can make a PDF version of your resume using our free Sketch template here</a>. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.  Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. </p>
-        </div><!--//col-->
+          <p class="mb-0">{{resumeData.summary}}</p>
+        </div>
       </div>
-    </div><!--//resume-intro-->
+    </div>
     <hr>
     <div class="resume-body">
       <div class="row">
-        <div class="resume-main col-12 col-lg-8 col-xl-9   pe-0   pe-lg-5">
+        <div class="resume-main col-12 col-lg-8 col-xl-9 pe-0 pe-lg-5">
           <section class="work-section py-3">
             <h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
-            <div class="item mb-3">
+            <div class="item mb-3" *ngFor="let exp of resumeData.experience">
               <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Engineer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Google | 2023 - Present</div>
-
+                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">{{exp.role}}</h4>
+                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end"> {{exp.company}} | {{exp.years}}</div>
               </div>
               <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                <ul class="resume-list">
-                  <li>Lorem ipsum dolor sit amet, consectetuer.</li>
-                  <li>Aenean commodo ligula eget dolor.</li>
-                  <li>Etiam ultricies nisi vel augue.</li>
-                </ul>
-              </div>
-            </div><!--//item-->
-            <div class="item mb-3">
-              <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Lead Software Developer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Apple | 2022 - 2023</div>
-
-              </div>
-              <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
+                <p>{{exp.description}}</p>
                 <ul class="resume-list">
                   <li>Lorem ipsum dolor sit amet, consectetuer.</li>
                   <li>Aenean commodo ligula eget dolor.</li>
                 </ul>
               </div>
-            </div><!--//item-->
-            <div class="item mb-3">
-              <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Software Developer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Dropbox | 2020 - 2022</div>
-
-              </div>
-              <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              </div>
-            </div><!--//item-->
-            <div class="item">
-              <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Senior Developer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Uber | 2019 - 2020</div>
-
-              </div>
-              <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p>
-              </div>
-            </div><!--//item-->
-            <div class="item">
-              <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Backend Developer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Amazon | 2018 - 2019</div>
-
-              </div>
-              <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-              </div>
-            </div><!--//item-->
-            <div class="item">
-              <div class="item-heading row align-items-center mb-2">
-                <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Frontend Developer</h4>
-                <div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end">Startup | 2017 - 2018</div>
-
-              </div>
-              <div class="item-content">
-                <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus. </p>
-              </div>
-            </div><!--//item-->
-
+            </div>
           </section><!--//work-section-->
-
-
           <section class="project-section py-3">
             <h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
             <div class="item mb-3">
@@ -142,7 +91,7 @@
                 <p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
 
               </div>
-            </div><!--//item-->
+            </div>
             <div class="item">
               <div class="item-heading row align-items-center mb-2">
                 <h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Project Praesent </h4>
@@ -162,13 +111,27 @@
             <div class="item">
               <h4 class="item-title">Technical</h4>
               <ul class="list-unstyled resume-skills-list">
-                <li class="mb-2">JavaScript/Angular/React/Vue</li>
-                <li class="mb-2">Python/Ruby/PHP<li>
-                <li class="mb-2">Node.js/ASP.NET</li>
-                <li class="mb-2">PostgreSQL/MySQL</li>
-                <li class="mb-2">Object-oriented design</li>
-                <li class="mb-2">Design and implement database structures</li>
-                <li>Lead and deliver complex software systems</li>
+                <li class="mb-2"  *ngFor="let lenguaje of resumeData.habilidadesTecnicas.lenguajes">
+                  {{ lenguaje }}
+                </li>
+                <li class="mb-2"  *ngFor="let framework of resumeData.habilidadesTecnicas.frameworks">
+                  {{ framework }}
+                </li>
+                <li class="mb-2"  *ngFor="let basesDeDato of resumeData.habilidadesTecnicas.basesDeDatos">
+                  {{ basesDeDato }}
+                </li>
+                <li class="mb-2"  *ngFor="let api of resumeData.habilidadesTecnicas.apis">
+                  {{ api }}
+                </li>
+                <li class="mb-2"  *ngFor="let test of resumeData.habilidadesTecnicas.testing">
+                  {{ test }}
+                </li>
+                <li class="mb-2"  *ngFor="let dev of resumeData.habilidadesTecnicas.devOpsCloud">
+                  {{ dev }}
+                </li>
+                <li class="mb-2"  *ngFor="let tool of resumeData.habilidadesTecnicas.herramientas">
+                  {{ tool }}
+                </li>
               </ul>
             </div><!--//item-->
             <div class="item">
@@ -195,7 +158,7 @@
                 <div class="resume-degree-time text-muted">2016 - 2017</div>
               </li>
             </ul>
-          </section><!--//education-section-->
+          </section>
           <section class="education-section py-3">
             <h3 class="text-uppercase resume-section-heading mb-4">Awards</h3>
             <ul class="list-unstyled resume-awards-list">
@@ -208,14 +171,14 @@
                 <div class="text-muted">Oracle Aenean (2020)</div>
               </li>
             </ul>
-          </section><!--//education-section-->
+          </section>
           <section class="skills-section py-3">
             <h3 class="text-uppercase resume-section-heading mb-4">Languages</h3>
             <ul class="list-unstyled resume-lang-list">
               <li class="mb-2">English <span class="text-muted">(Native)</span></li>
               <li>Spanish <span class="text-muted">(Professional)</span></li>
             </ul>
-          </section><!--//certificates-section-->
+          </section>
           <section class="skills-section py-3">
             <h3 class="text-uppercase resume-section-heading mb-4">Interests</h3>
             <ul class="list-unstyled resume-interests-list mb-0">
@@ -224,19 +187,20 @@
               <li class="mb-2">Photography</li>
               <li>Travelling</li>
             </ul>
-          </section><!--//certificates-section-->
+          </section>
 
-        </aside><!--//resume-aside-->
-      </div><!--//row-->
-    </div><!--//resume-body-->
+        </aside>
+      </div>
+    </div>
     <hr>
     <div class="resume-footer text-center">
       <ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-        <li class="list-inline-item mb-lg-0 me-3"><a class="resume-link" href="#"><i class="fa-brands fa-github-square fa-2x me-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">github.com/username</span></a></li>
-        <li class="list-inline-item mb-lg-0 me-3"><a class="resume-link" href="#"><i class="fa-brands fa-linkedin fa-2x me-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">linkedin.com/in/username</span></a></li>
-        <li class="list-inline-item mb-lg-0 me-lg-3"><a class="resume-link" href="#"><i class="fa-brands fa-square-x-twitter fa-2x me-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">&#64;twittername</span></a></li>
+        <li class="list-inline-item mb-lg-0 me-3"><a href="{{codePenProfileUrl}}"><fa-icon [icon]="faLinkedinIn"></fa-icon></a></li>
+        <li class="list-inline-item mb-lg-0 me-3"><a href="{{gitHubProfileUrl}}"><fa-icon [icon]="faGithubAlt"></fa-icon></a></li>
+        <li class="list-inline-item mb-lg-0 me-lg-3"><a href="{{StackOverFlowProfileUrl}}"><fa-icon [icon]="faStackOverflow"></fa-icon></a></li>
+        <li class="list-inline-item mb-lg-0 me-lg-3"><a href="{{codePenProfileUrl}}"><fa-icon [icon]="faCodepen"></fa-icon></a></li>
       </ul>
-    </div><!--//resume-footer-->
+    </div>
   </article>
 
 </div>

@@ -1,24 +1,54 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {NgIf} from "@angular/common";
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
+import {NgIf, NgFor} from "@angular/common";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatButtonModule} from "@angular/material/button";
+import { ResumeService } from '../services/resume.service';
+import {faEnvelopeSquare, faFileLines, faGlobe, faMapMarkerAlt, faPhoneSquare, faDownload} from "@fortawesome/free-solid-svg-icons";
+import {FaIconComponent} from "@fortawesome/angular-fontawesome";
+import {faCodepen, faGithubAlt, faLinkedinIn, faStackOverflow} from "@fortawesome/free-brands-svg-icons";
+import {MatIconModule} from "@angular/material/icon";
+import gsap from "gsap";
+
 
 @Component({
   selector: 'app-resume',
   standalone: true,
   imports: [
     NgIf,
+    NgFor,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    FaIconComponent,
+    MatIconModule
   ],
   templateUrl: './resume.component.html',
   styleUrl: './resume.component.css',
   encapsulation: ViewEncapsulation.Emulated
 })
 
-export class ResumeComponent {
-  isGenerating = false;
+export class ResumeComponent implements OnInit, AfterViewInit{
 
+  @ViewChild('downloadPDFBtn', { static: true }) downloadPDFBtn!: ElementRef;
+
+  ngAfterViewInit(){
+    const download =this.downloadPDFBtn.nativeElement;
+
+    download.addEventListener('mouseenter', () => {gsap.to(download, {scale: 1.035, duration: 0.3 });});
+    download.addEventListener('mouseleave', () => {gsap.to(download, { scale: 1, duration: 0.3 });});
+  }
+
+  resumeData: any = null;
+  isLoading = true;
+  constructor(private readonly resumeService: ResumeService) {}
+
+  ngOnInit() {
+    this.resumeService.getResume().subscribe(data => {
+      this.resumeData = data;
+      this.isLoading = false;
+    });
+  }
+
+  isGenerating = false;
   async generatePDF() {
 
     const { jsPDF } = await import('jspdf');
@@ -72,6 +102,23 @@ export class ResumeComponent {
       pdf.save('resume.pdf');
       this.isGenerating = false;
     });
-
   }
+
+  protected readonly faPhoneSquareIcon = faDownload;
+  protected readonly faPhoneSquare = faPhoneSquare;
+  protected readonly faEnvelopeSquare = faEnvelopeSquare;
+  protected readonly faGlobe = faGlobe;
+  protected readonly faMapMarkerAlt = faMapMarkerAlt;
+  protected readonly faFileLinesIcon = faFileLines;
+  protected readonly faLinkedinIn = faLinkedinIn;
+  protected readonly faGithubAlt = faGithubAlt;
+  protected readonly faStackOverflow = faStackOverflow;
+  protected readonly faCodepen = faCodepen;
+
+  linkedinProfileUrl: string = 'https://www.linkedin.com/in/hervoya/';
+  gitHubProfileUrl = 'https://github.com/HervoyAncacuraB';
+  StackOverFlowProfileUrl = 'https://stackoverflow.com/users/6895553/jrvcio';
+  codePenProfileUrl = 'https://codepen.io/Hervoy-Ancacura';
+
+  protected readonly faDownload = faDownload;
 }
