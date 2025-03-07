@@ -1,7 +1,8 @@
 # Tareas Pendientes
 
 ## Default Task
-*  [] add a mock object, json object(Resume)
+*  [] add tool to minify files
+*  [x] add a mock object, json object(Resume)
 *  [] add un efecto chingon to the page (see codepen bookmark)
 *  [] explore and add efecto angular material
 
@@ -10,6 +11,7 @@
 *  [] connect form with backend(BFF)
 
 ## TL Task
+*  [] add herramienta de compilacion(Grunt, Gulp o Webpack)
 *  [] apply lazy load and other optimized strategies
 *  [] define de branching model
 *  [] define the nomenclature of commit message
