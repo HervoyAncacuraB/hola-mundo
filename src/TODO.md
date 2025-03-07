@@ -54,6 +54,8 @@
 *  [] review gitbook to document this and other projects
 *  [] agregar libreria documentacion (JSDoc vs Compodoc )
 *  [] buscar alguna liberia que documente mis librerias en base a mi package.json
+*  [] Implement Compdoc to complete documentatio
+*  [] use Madge para visualizar conexion entre archivos
 
 ## Research
 *  [] Que hay acerca de preprocesadores como SCSS o PostCSS
